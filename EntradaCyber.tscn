@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://d1ggs7g2u4o7h"]
+
+[node name="EntradaCyber" type="Node2D" unique_id=345807227]
+
+[node name="EntradaCyber" type="TileMapLayer" parent="." unique_id=675484391]

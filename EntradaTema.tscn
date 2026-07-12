@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bdugyj50l7jv0"]
+
+[node name="EntradaTema" type="Node2D" unique_id=1556234026]
+
+[node name="EntradaTema" type="TileMapLayer" parent="." unique_id=154976768]
