@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://dtg3n814oaif4"]
-
-[node name="EntradaBossFinal" type="Node2D" unique_id=24753251]
-
-[node name="EntradaBossFinal" type="TileMapLayer" parent="." unique_id=908929964]
