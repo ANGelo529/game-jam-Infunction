@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c614a75kawqo"
-path="res://.godot/imported/world_tileset.png-43997af0f41c667255989e7c19c45cff.ctex"
+uid="uid://cxjw7bt3q6bqh"
+path="res://.godot/imported/Falling (32 x 32).png-060e38588ac5ed924b1ec0095db4c99d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AssetsRoubados/world_tileset.png"
-dest_files=["res://.godot/imported/world_tileset.png-43997af0f41c667255989e7c19c45cff.ctex"]
+source_file="res://AssetsRoubados/2 - Holly/Falling (32 x 32).png"
+dest_files=["res://.godot/imported/Falling (32 x 32).png-060e38588ac5ed924b1ec0095db4c99d.ctex"]
 
 [params]
 

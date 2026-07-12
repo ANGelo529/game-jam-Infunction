@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c614a75kawqo"
-path="res://.godot/imported/world_tileset.png-43997af0f41c667255989e7c19c45cff.ctex"
+uid="uid://ce5d4olslnw3v"
+path="res://.godot/imported/Ground_smash (64 x 48).png-c921dd4bf3657f5e1a62bee8315f68b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AssetsRoubados/world_tileset.png"
-dest_files=["res://.godot/imported/world_tileset.png-43997af0f41c667255989e7c19c45cff.ctex"]
+source_file="res://AssetsRoubados/2 - Holly/Ground_smash (64 x 48).png"
+dest_files=["res://.godot/imported/Ground_smash (64 x 48).png-c921dd4bf3657f5e1a62bee8315f68b4.ctex"]
 
 [params]
 

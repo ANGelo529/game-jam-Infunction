@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c614a75kawqo"
-path="res://.godot/imported/world_tileset.png-43997af0f41c667255989e7c19c45cff.ctex"
+uid="uid://5srdqqoujnwp"
+path="res://.godot/imported/Running (32 x 32).png-503d6493c0df64f8428d08ae0a9d7341.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AssetsRoubados/world_tileset.png"
-dest_files=["res://.godot/imported/world_tileset.png-43997af0f41c667255989e7c19c45cff.ctex"]
+source_file="res://AssetsRoubados/2 - Holly/Running (32 x 32).png"
+dest_files=["res://.godot/imported/Running (32 x 32).png-503d6493c0df64f8428d08ae0a9d7341.ctex"]
 
 [params]
 

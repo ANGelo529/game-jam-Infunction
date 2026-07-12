@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c614a75kawqo"
-path="res://.godot/imported/world_tileset.png-43997af0f41c667255989e7c19c45cff.ctex"
+uid="uid://cgnf8iod8pusn"
+path="res://.godot/imported/Ducking (32 x 32).png-7825f32e3cbb06f2ae476ab718eaca21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AssetsRoubados/world_tileset.png"
-dest_files=["res://.godot/imported/world_tileset.png-43997af0f41c667255989e7c19c45cff.ctex"]
+source_file="res://AssetsRoubados/2 - Holly/Ducking (32 x 32).png"
+dest_files=["res://.godot/imported/Ducking (32 x 32).png-7825f32e3cbb06f2ae476ab718eaca21.ctex"]
 
 [params]
 
