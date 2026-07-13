@@ -2,9 +2,10 @@ extends CharacterBody2D
 @onready var animacao: AnimatedSprite2D = $animacao
 
 
-const SPEED = 700.0
+const SPEED = 450
 const JUMP_VELOCITY = -400.0
 
+var jumps = 2
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -13,8 +14,12 @@ func _physics_process(delta: float) -> void:
 	
 
 	# Handle jump.
-	if Input.is_action_just_pressed("pulo") and is_on_floor():
+	if Input.is_action_just_pressed("pulo") and jumps > 1:
 		velocity.y = JUMP_VELOCITY
+		jumps -= 1
+		
+	if is_on_floor():
+		jumps = 2
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
