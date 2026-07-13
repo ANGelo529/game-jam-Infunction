@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://du6lve76rtbl8"]
 
-[ext_resource type="Script" uid="uid://b6nhcrkn2oo85" path="res://Scripts/corpo.gd" id="1_7k6h6"]
+[ext_resource type="Script" uid="uid://rx7k1ltyivur" path="res://Scripts/player.gd" id="1_r8ryd"]
 [ext_resource type="Texture2D" uid="uid://5srdqqoujnwp" path="res://AssetsRoubados/2 - Holly/Running (32 x 32).png" id="2_r8ryd"]
 [ext_resource type="Texture2D" uid="uid://fd5ex8rj3igf" path="res://AssetsRoubados/2 - Holly/Idle (32 x 32).png" id="3_5akqg"]
 
@@ -125,22 +125,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="Node2D" unique_id=246160444]
+[node name="Player" type="CharacterBody2D" unique_id=1808323194 groups=["Player"]]
+script = ExtResource("1_r8ryd")
 
-[node name="corpo" type="CharacterBody2D" parent="." unique_id=1872490224]
-script = ExtResource("1_7k6h6")
-
-[node name="colisaoPlayer" type="CollisionShape2D" parent="corpo" unique_id=1573373622]
+[node name="colisaoPlayer" type="CollisionShape2D" parent="." unique_id=1573373622]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_xrivr")
 
-[node name="animacao" type="AnimatedSprite2D" parent="corpo" unique_id=1605520188]
+[node name="animacao" type="AnimatedSprite2D" parent="." unique_id=1605520188]
 sprite_frames = SubResource("SpriteFrames_xrivr")
 animation = &"idle"
 frame_progress = 0.8190703
-
-[node name="CameraPlayer" type="Camera2D" parent="corpo" unique_id=1432300415]
-limit_left = 0
-limit_top = 0
-limit_right = 2000
-limit_bottom = 1105

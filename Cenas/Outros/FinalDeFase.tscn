@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cp1ksb4jifg85"]
+
+[ext_resource type="Script" uid="uid://bnipvrg4j8qxw" path="res://Scripts/final_de_fase.gd" id="1_1vi4t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
+
+[node name="FinalDeFase" type="Area2D" unique_id=1061367317]
+collision_layer = 8
+script = ExtResource("1_1vi4t")
+
+[node name="ColisorFinalFase" type="CollisionShape2D" parent="." unique_id=1333802107]
+shape = SubResource("RectangleShape2D_13qdw")
+debug_color = Color(0, 0, 0, 0.41960785)
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

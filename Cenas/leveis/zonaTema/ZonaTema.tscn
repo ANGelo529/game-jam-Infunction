@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bdugyj50l7jv0"]
+
+[ext_resource type="TileSet" uid="uid://c2x5qgxiwwufp" path="res://Cenas/leveis/Base.tres" id="1_phjkj"]
+
+[node name="ZonaTema" type="Node2D" unique_id=1556234026]
+
+[node name="EntradaTema" type="TileMapLayer" parent="." unique_id=154976768]
+tile_set = ExtResource("1_phjkj")
