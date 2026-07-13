@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://iosb2w0fsbmo"]
+
+[ext_resource type="PackedScene" uid="uid://d1ggs7g2u4o7h" path="res://Cenas/leveis/zonaCyber/ZonaCyber.tscn" id="2_qx08n"]
+[ext_resource type="PackedScene" uid="uid://bey4nq4nuupdv" path="res://Cenas/leveis/zonaInicial/ZonaInicial.tscn" id="2_y8woi"]
+[ext_resource type="TileSet" uid="uid://c2x5qgxiwwufp" path="res://Cenas/leveis/Base.tres" id="3_7bm8d"]
+[ext_resource type="PackedScene" uid="uid://bdugyj50l7jv0" path="res://Cenas/leveis/zonaTema/ZonaTema.tscn" id="3_dygii"]
+[ext_resource type="PackedScene" uid="uid://dtg3n814oaif4" path="res://Cenas/leveis/zonaBossFinal/ZonaBossFinal.tscn" id="4_dygii"]
+
+[node name="MainLeveis" type="Node2D" unique_id=1681679076]
+
+[node name="ZonaInicial" parent="." unique_id=1834692304 groups=["ZonaInicial"] instance=ExtResource("2_y8woi")]
+
+[node name="Inicio" parent="ZonaInicial" index="0" unique_id=710254678 groups=["ZonaInicial"]]
+
+[node name="Camera" parent="ZonaInicial/Inicio" index="0" unique_id=1353948410 groups=["ZonaInicial"]]
+
+[node name="Player" parent="ZonaInicial/Inicio" index="1" unique_id=246160444 groups=["ZonaInicial"]]
+
+[node name="ZonaCyber" parent="." unique_id=345807227 groups=["ZonaCyber"] instance=ExtResource("2_qx08n")]
+visible = false
+
+[node name="EntradaCyber" parent="ZonaCyber" index="0" unique_id=675484391 groups=["ZonaCyber"]]
+tile_set = ExtResource("3_7bm8d")
+
+[node name="ZonaTema" parent="." unique_id=1556234026 groups=["ZonaTema"] instance=ExtResource("3_dygii")]
+visible = false
+
+[node name="ZonaBossFinal" parent="." unique_id=24753251 groups=["ZonaBossFinal"] instance=ExtResource("4_dygii")]
+visible = false
+
+[node name="EntradaBossFinal" parent="ZonaBossFinal" index="0" unique_id=908929964]
+texture_filter = 1
+tile_set = ExtResource("3_7bm8d")
+
+[editable path="ZonaInicial"]
+[editable path="ZonaInicial/Inicio/FinalDeFase"]
+[editable path="ZonaCyber"]
+[editable path="ZonaTema"]
+[editable path="ZonaBossFinal"]

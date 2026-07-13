@@ -5,10 +5,10 @@ extends Area2D
 @onready var zona_boss_final: Node2D = $"../../../ZonaBossFinal"
 
 var zonas = {
-	zonaInicial = $"../..",
-	zonaCyber = $"../../../ZonaCyber",
-	zonaTema = $"../../../ZonaTema",
-	zonaBossFinal = $"../../../ZonaBossFinal"
+	zonaInicial = zona_inicial,
+	zonaCyber = zona_cyber,
+	zonaTema = zona_tema,
+	zonaBossFinal = zona_boss_final
 }
 
 var noAtual = Node2D
@@ -16,7 +16,8 @@ var proxNo = Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	verificarZonaAtual()
+	#verificarZonaAtual()
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,7 +26,7 @@ func _process(delta: float) -> void:
 
 
 func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	trocarFase(noAtual,proxNo)
+	#trocarFase(noAtual,proxNo)
 	pass
 	
 func trocarFase(noAntigo: Node2D,proxNo: Node2D):
@@ -40,11 +41,12 @@ func verificarZonaAtual():
 	var caminhoAtual = String(get_path())
 	
 	for i in zonas:
-		if caminhoAtual.has(String(i)):
+		if i in caminhoAtual:
 			caminhoAtual = i
+			break
 	
-	var noZona = caminhoAtual.add_child
-	
+	var noZona = get_node(caminhoAtual)
+	print(noZona)
 	
 	
 	
