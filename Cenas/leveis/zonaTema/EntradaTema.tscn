@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bdugyj50l7jv0"]
+
+[ext_resource type="TileSet" uid="uid://c2x5qgxiwwufp" path="res://Cenas/leveis/Base.tres" id="1_phjkj"]
+[ext_resource type="PackedScene" uid="uid://bhobomjg7nfa0" path="res://Cenas/Outros/camera.tscn" id="2_c6ama"]
+[ext_resource type="PackedScene" uid="uid://du6lve76rtbl8" path="res://Cenas/Player/Player.tscn" id="3_6og6s"]
+[ext_resource type="PackedScene" uid="uid://cp1ksb4jifg85" path="res://Cenas/Outros/FinalDeFase.tscn" id="4_vympw"]
+
+[node name="EntradaTema" type="TileMapLayer" unique_id=154976768 groups=["ZonaInicial"]]
+tile_set = ExtResource("1_phjkj")
+
+[node name="Camera" parent="." unique_id=1353948410 instance=ExtResource("2_c6ama")]
+
+[node name="Player" parent="." unique_id=1808323194 instance=ExtResource("3_6og6s")]
+position = Vector2(122, 108)
+
+[node name="FinalDeFase" parent="." unique_id=1061367317 instance=ExtResource("4_vympw")]
+position = Vector2(-28, 158)
+
+[editable path="FinalDeFase"]

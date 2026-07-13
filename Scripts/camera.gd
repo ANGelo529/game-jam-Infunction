@@ -1,5 +1,6 @@
 extends Camera2D
 
+
 var alvo = Node2D
 
 # Called when the node enters the scene tree for the first time.

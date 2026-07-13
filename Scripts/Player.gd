@@ -1,7 +1,6 @@
 extends CharacterBody2D
 @onready var animacao: AnimatedSprite2D = $animacao
 
-
 const SPEED = 450
 const JUMP_VELOCITY = -400
 
@@ -12,6 +11,9 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
+	if CharacterBody2D == self:
+			var zonaAtual = Node2D.name
+			print(zonaAtual)
 
 	# Handle jump.
 	if Input.is_action_just_pressed("pulo") and jumps > 1:

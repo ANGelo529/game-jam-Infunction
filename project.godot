@@ -24,10 +24,10 @@ window/stretch/aspect="expand"
 [global_group]
 
 Player="Nós principais dos players"
-ZonaInicial="guarda os Nós da zona inicial"
 ZonaCyber="agrupa todos os nós da ZonaCyber"
 ZonaTema="agrupa todos os nós da zonaTema"
 ZonaBossFinal="agrupa todos os nós da zonaBossFinal"
+ZonaInicial=""
 
 [input]
 
