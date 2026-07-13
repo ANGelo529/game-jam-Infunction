@@ -1,11 +1,44 @@
 [gd_scene format=3 uid="uid://du6lve76rtbl8"]
 
-[ext_resource type="Script" uid="uid://rx7k1ltyivur" path="res://Scripts/player.gd" id="1_r8ryd"]
+[ext_resource type="Script" uid="uid://bdoq5bfj3vtbt" path="res://Scripts/player.gd" id="1_r8ryd"]
+[ext_resource type="Texture2D" uid="uid://ce5d4olslnw3v" path="res://AssetsRoubados/2 - Holly/Ground_smash (64 x 48).png" id="2_5akqg"]
 [ext_resource type="Texture2D" uid="uid://5srdqqoujnwp" path="res://AssetsRoubados/2 - Holly/Running (32 x 32).png" id="2_r8ryd"]
 [ext_resource type="Texture2D" uid="uid://fd5ex8rj3igf" path="res://AssetsRoubados/2 - Holly/Idle (32 x 32).png" id="3_5akqg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(20, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ma6wq"]
+atlas = ExtResource("2_5akqg")
+region = Rect2(0, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k46qe"]
+atlas = ExtResource("2_5akqg")
+region = Rect2(64, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuox4"]
+atlas = ExtResource("2_5akqg")
+region = Rect2(128, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1jv8"]
+atlas = ExtResource("2_5akqg")
+region = Rect2(192, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qac1"]
+atlas = ExtResource("2_5akqg")
+region = Rect2(256, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wt4ar"]
+atlas = ExtResource("2_5akqg")
+region = Rect2(320, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksbsh"]
+atlas = ExtResource("2_5akqg")
+region = Rect2(384, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4k7s"]
+atlas = ExtResource("2_5akqg")
+region = Rect2(448, 0, 64, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ihxy"]
 atlas = ExtResource("2_r8ryd")
@@ -71,6 +104,35 @@ region = Rect2(256, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ma6wq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k46qe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nuox4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1jv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qac1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wt4ar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ksbsh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4k7s")
+}],
+"loop": 1,
+"name": &"atacking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_6ihxy")
 }, {
 "duration": 1.0,
@@ -134,5 +196,7 @@ shape = SubResource("RectangleShape2D_xrivr")
 
 [node name="animacao" type="AnimatedSprite2D" parent="." unique_id=1605520188]
 sprite_frames = SubResource("SpriteFrames_xrivr")
-animation = &"idle"
-frame_progress = 0.8190703
+animation = &"atacking"
+frame = 3
+frame_progress = 0.5347229
+offset = Vector2(0, -8)
