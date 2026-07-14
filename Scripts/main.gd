@@ -50,16 +50,19 @@ func carregarNovaFase():
 	var listaFases = zonas[zonaAtual]
 	var caminhoFase = listaFases[indiceFaseAtual]
 	
-	call_deferred("_substituirCena",caminhoFase)
+	get_tree().change_scene_to_file(caminhoFase)
+	#call_deferred("_substituirCena",caminhoFase)
 	
 func _substituirCena(caminhoCena: String):
 	if get_child_count() > 0:
 		var faseAntiga = get_child(0)
 		faseAntiga.free()
-		
+	
+	
 	var novaFase = load(caminhoCena)
 	var instanciaNovaFase = novaFase.instantiate()
 	add_child(instanciaNovaFase)
+	
 	#if not novaCena:
 		#push_error("Erro ao carregar a cena: " + caminhoCena)
 		#return
@@ -84,27 +87,3 @@ func avancarFase() -> void:
 	else:
 		escolherZonaRandom()
 		
-#func mudarDeFase(numFase:int,zonaAtual:String):
-	#var nosZonaAtual = get_tree().get_nodes_in_group(zonaAtual)
-	#
-	#
-	#var proximaFase = numFase + 1
-	#if proximaFase < nosZonaAtual.size():
-		#trocarFase(proximaFase,nosZonaAtual)
-	#else:
-		#zonaAtual = grupos[str(randi_range(0,2))]
-		#nosZonaAtual = get_tree().get_nodes_in_group(zonaAtual)
-		#trocarFase(1,nosZonaAtual)
-	#
-#func mudarDeZona(zonaAtual:String):
-	#get_tree().change_scene_to_file("res://"+ zonaAtual +".tscn")
-#
-#func trocarFase(proximaFase:int,nosZonaAtual):
-	#var novaFase = nosZonaAtual[proximaFase]
-	#if novaFase.get_parent() != null:
-		#novaFase.get_parent().remove_child(novaFase)
-		#
-	#var cenaAtual = get_tree().root
-	#get_tree().current_scene.queue_free()
-	#cenaAtual.add_child(novaFase)
-	#get_tree().current_scene = novaFase
