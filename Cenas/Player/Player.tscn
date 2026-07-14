@@ -196,6 +196,7 @@ position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_xrivr")
 
 [node name="animacao" type="AnimatedSprite2D" parent="." unique_id=1605520188]
+position = Vector2(-3, 4)
 sprite_frames = SubResource("SpriteFrames_xrivr")
 animation = &"atacking"
 frame = 3

@@ -2,13 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cqwr6jbrt1hpb" path="res://Scripts/main.gd" id="1_aaea2"]
 [ext_resource type="PackedScene" uid="uid://ceeqljvprya8u" path="res://Cenas/leveis/ZonaInicial/ExplicacaoLore.tscn" id="2_y8woi"]
-[ext_resource type="PackedScene" uid="uid://1fcp6r7hmt6n" path="res://Cenas/leveis/ZonaInicial/BatalhaDeExemplo.tscn" id="3_qx08n"]
 
 [node name="MainLeveis" type="Node2D" unique_id=1681679076]
 script = ExtResource("1_aaea2")
 
 [node name="ExplicacaoLore" parent="." unique_id=848738081 groups=["ZonaInicial"] instance=ExtResource("2_y8woi")]
-
-[node name="BatalhaDeExemplo" parent="." unique_id=1045931100 groups=["ZonaInicial"] instance=ExtResource("3_qx08n")]
-
-[editable path="BatalhaDeExemplo"]
