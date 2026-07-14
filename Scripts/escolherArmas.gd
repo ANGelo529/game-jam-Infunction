@@ -1,4 +1,4 @@
-extends Area2D
+extends StaticBody2D
 @export var texto_lable: Label 
 
 # Called when the node enters the scene tree for the first time.
@@ -21,4 +21,8 @@ func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, 
 		await get_tree().create_timer(5.0).timeout
 		texto_lable.text = ""
 		
+	pass # Replace with function body.
+
+
+func _on_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	pass # Replace with function body.

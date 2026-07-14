@@ -1,6 +1,4 @@
 extends Camera2D
-
-
 var alvo = Node2D
 
 # Called when the node enters the scene tree for the first time.
@@ -10,8 +8,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	position.x = alvo.position.x
-	position.y = alvo.position.y
+	descobrirPosicaoPlayer()
+	if alvo.position != null:
+		position.x = alvo.position.x
+		position.y = alvo.position.y
 
 func descobrirPosicaoPlayer():
 	var nosPlayer = get_tree().get_nodes_in_group("Player")

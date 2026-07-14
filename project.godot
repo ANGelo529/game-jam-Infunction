@@ -14,6 +14,10 @@ config/name="game jam"
 run/main_scene="uid://iosb2w0fsbmo"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
+[autoload]
+
+Main="*uid://cqwr6jbrt1hpb"
+
 [display]
 
 window/size/viewport_width=500
@@ -28,6 +32,7 @@ ZonaCyber="agrupa todos os nós da ZonaCyber"
 ZonaTema="agrupa todos os nós da zonaTema"
 ZonaBossFinal="agrupa todos os nós da zonaBossFinal"
 ZonaInicial=""
+ZonaMagia="Agrupa as cenas pertencentes a zona da magia"
 
 [input]
 
