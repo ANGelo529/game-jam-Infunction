@@ -179,12 +179,11 @@ position = Vector2(83, 158)
 position = Vector2(84, 158)
 
 [node name="FinalDeFase" parent="." unique_id=1061367317 instance=ExtResource("4_2mhbt")]
-position = Vector2(1116, 641)
+position = Vector2(1027, 625)
 rotation = -1.5707964
 
 [node name="ColisorFinalFase" parent="FinalDeFase" index="0" unique_id=1333802107]
-light_mask = 8
-position = Vector2(28.000004, -122)
+position = Vector2(-23.000004, 85)
 scale = Vector2(1, 6)
 shape = SubResource("RectangleShape2D_8oucn")
 

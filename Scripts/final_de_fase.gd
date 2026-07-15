@@ -7,15 +7,14 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
-	print(jaAtivou)
 	pass
 
-func _on_body_entered(body: Node2D) -> void:
-	if jaAtivou:
-		return
+
+
+func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	
 	if body.is_in_group("Player"):
-		jaAtivou = true
+		
 		await Main.avancarFase()
-		jaAtivou = false
+		print("Ja trocou de fase")
 	pass 

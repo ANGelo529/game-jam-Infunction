@@ -46,7 +46,7 @@ func escolherZonaRandom():
 		zonaAtual = zonasJogadas.pop_front()
 	else:
 		zonaAtual = zonasJogadas.pop_front()
-		
+	
 	print(zonaAtual)
 	carregarNovaFase()
 	
@@ -85,7 +85,7 @@ func _substituirCena(caminhoCena: String):
 func avancarFase() -> void:
 	var fasesZona = zonas[zonaAtual]
 	
-	if indiceFaseAtual < fasesZona.size() - 1:
+	if indiceFaseAtual < fasesZona.size() - indiceFaseAtual - 1:
 		indiceFaseAtual += 1
 		carregarNovaFase()
 	else:
