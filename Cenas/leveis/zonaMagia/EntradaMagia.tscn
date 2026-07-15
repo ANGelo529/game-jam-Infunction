@@ -183,7 +183,8 @@ position = Vector2(1116, 641)
 rotation = -1.5707964
 
 [node name="ColisorFinalFase" parent="FinalDeFase" index="0" unique_id=1333802107]
-position = Vector2(-5, -3.5)
+light_mask = 8
+position = Vector2(28.000004, -122)
 scale = Vector2(1, 6)
 shape = SubResource("RectangleShape2D_8oucn")
 

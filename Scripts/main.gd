@@ -8,13 +8,13 @@ var zonas = {
 	"ZonaInicial" = [
 		"res://Cenas/leveis/ZonaInicial/ExplicacaoLore.tscn"
 	],
-	"ZonaCyber" = [
-		"res://Cenas/leveis/zonaCyber/EntradaCyber.tscn"
-	],
 	"ZonaMagia" = [
 		"res://Cenas/leveis/zonaMagia/EntradaMagia.tscn",
 		"res://Cenas/leveis/zonaMagia/zonaMagia2.tscn",
 		"res://Cenas/leveis/zonaMagia/CorridonaFoda.tscn"
+	],
+	"ZonaCyber" = [
+		"res://Cenas/leveis/zonaCyber/EntradaCyber.tscn"
 	],
 	"zonaTema" = [
 		"res://Cenas/leveis/zonaTema/EntradaTema.tscn"
@@ -24,26 +24,30 @@ var zonas = {
 var zonasJogadas = []
 var zonaAtual: String = "ZonaInicial"
 var indiceFaseAtual: int = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	zonasJogadas = zonas.keys()
 	escolherZonaRandom()
-	pass # Replace with function body.
-
+	pass 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
 func escolherZonaRandom():
 	if zonasJogadas.is_empty():
 		print("Começar o boss final")
 		return
+	
+	
 	if zonaAtual != "ZonaInicial":
 		zonasJogadas.shuffle()
+		zonaAtual = zonasJogadas.pop_front()
+	else:
+		zonaAtual = zonasJogadas.pop_front()
 		
-	zonaAtual = zonasJogadas.pop_front()
-	
-	indiceFaseAtual = 0
+	print(zonaAtual)
 	carregarNovaFase()
 	
 func carregarNovaFase():
