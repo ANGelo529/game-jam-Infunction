@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bhobomjg7nfa0"]
 
 [ext_resource type="Script" uid="uid://tmtki3h7n0xj" path="res://Scripts/camera.gd" id="1_o2bsh"]
+[ext_resource type="Texture2D" uid="uid://74ai33g2hddl" path="res://AssetsRoubados/iconeArma.png" id="2_ingn1"]
 
 [node name="Camera" type="Camera2D" unique_id=1353948410]
 limit_left = 0
@@ -8,3 +9,11 @@ limit_top = 0
 limit_right = 2000
 limit_bottom = 1103
 script = ExtResource("1_o2bsh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=42707780]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=14456142]
+position = Vector2(467, 18.000015)
+scale = Vector2(0.10745937, 0.10907856)
+texture = ExtResource("2_ingn1")

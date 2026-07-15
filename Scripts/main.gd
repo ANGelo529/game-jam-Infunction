@@ -14,7 +14,8 @@ var zonas = {
 		"res://Cenas/leveis/zonaMagia/CorridonaFoda.tscn"
 	],
 	"ZonaCyber" = [
-		"res://Cenas/leveis/zonaCyber/EntradaCyber.tscn"
+		"res://Cenas/leveis/zonaCyber/EntradaCyber.tscn",
+		"res://Cenas/leveis/zonaCyber/CyberPunk.tscn"
 	],
 	"zonaTema" = [
 		"res://Cenas/leveis/zonaTema/EntradaTema.tscn"
