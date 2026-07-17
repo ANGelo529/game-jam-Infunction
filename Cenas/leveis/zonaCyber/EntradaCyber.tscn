@@ -167,6 +167,7 @@ metadata/_edit_vertical_guides_ = [1472.0]
 metadata/_edit_horizontal_guides_ = [592.0]
 
 [node name="Camera" parent="." unique_id=1353948410 instance=ExtResource("2_46agb")]
+zoom = Vector2(1, 1.2)
 limit_right = 1472
 limit_bottom = 592
 

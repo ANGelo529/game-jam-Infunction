@@ -162,6 +162,7 @@ position = Vector2(35, 328)
 
 [node name="Camera" parent="." unique_id=1353948410 instance=ExtResource("3_f86tc")]
 position = Vector2(-52, 110)
+zoom = Vector2(1, 1.3)
 limit_right = 1408
 limit_bottom = 512
 

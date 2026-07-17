@@ -150,6 +150,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAA
 tile_set = SubResource("TileSet_qc24j")
 
 [node name="Camera" parent="." unique_id=1353948410 instance=ExtResource("2_l3fcu")]
+zoom = Vector2(1, 3)
 limit_right = 2368
 limit_bottom = 224
 

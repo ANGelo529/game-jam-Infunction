@@ -184,13 +184,16 @@ metadata/_edit_vertical_guides_ = [1519.0]
 metadata/_edit_horizontal_guides_ = [512.0]
 
 [node name="Player" parent="." unique_id=1808323194 instance=ExtResource("1_71b8y")]
-position = Vector2(187, 165)
+position = Vector2(71, 190)
 
 [node name="Camera" parent="." unique_id=1353948410 instance=ExtResource("2_yqbgr")]
 position = Vector2(1, 146)
 zoom = Vector2(2, 2)
 limit_right = 1520
 limit_bottom = 512
+
+[node name="Sprite2D" parent="Camera/CanvasLayer" parent_id_path=PackedInt32Array(1353948410, 42707780) index="0" unique_id=14456142]
+position = Vector2(975, 40.999985)
 
 [node name="FinalDeFase" parent="." unique_id=1061367317 instance=ExtResource("3_th647")]
 position = Vector2(74, 62)

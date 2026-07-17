@@ -1,8 +1,5 @@
 extends Node2D
-#@onready var zonaInicial: Node2D = $ZonaInicial
-#@onready var zonaCyber: Node2D = $ZonaCyber
-#@onready var zonaTema: Node2D = $ZonaTema
-#@onready var zonaBossFinal: Node2D = $ZonaBossFinal
+
 	
 var zonas = {
 	"ZonaInicial" = [
@@ -60,7 +57,7 @@ func escolherZonaRandom():
 	
 	print(zonaAtual)
 	carregarNovaFase()
-	
+
 func carregarNovaFase():
 	var listaFases = []
 	var caminhoFase = ""
@@ -74,8 +71,6 @@ func carregarNovaFase():
 		caminhoFase = listaFases[indiceFaseAtual]
 		print(caminhoFase)
 		get_tree().change_scene_to_file(caminhoFase)
-	
-	
 	
 	#call_deferred("_substituirCena",caminhoFase)
 	

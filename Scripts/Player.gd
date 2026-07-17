@@ -1,5 +1,7 @@
 extends CharacterBody2D
 @onready var animacao: AnimatedSprite2D = $animacao
+@onready var areaAtaqueMachado: CollisionShape2D = $areaAtaqueMachado/ColisaoMachado
+@onready var areaAtaqueEspada: CollisionShape2D = $areaAtaqueEspada/colisaoEspada
 
 enum EstadoPlayer {
 	idle,
@@ -9,25 +11,20 @@ enum EstadoPlayer {
 	atacandoArco,
 	atacandoEspada
 }
-var statusAtual = EstadoPlayer
-const SPEED = 450
+
+var statusAtual = EstadoPlayer.idle
+const SPEED = 600
 const JUMP_VELOCITY = -400
 
 var jumps = 2
 var taAtacando = false
 
 func _ready() -> void:
-	animacao.animation_finished.connect(_animacaoTeminou)
-	animacao.play("idle")
+	animacao.animation_finished.connect(_on_animation_finished)
 	setarIdle()
 
 func _physics_process(delta: float) -> void:
 	gravidade(delta)
-	
-	if CharacterBody2D == self:
-			var zonaAtual = Node2D.name
-			print(zonaAtual)
-	
 	maquinaDeEstados()
 	move_and_slide()
 
@@ -62,10 +59,28 @@ func andar():
 	
 		if direction > 0:
 			animacao.flip_h = false
+			areaAtaqueEspada.position.x = abs(areaAtaqueEspada.position.x)
+			areaAtaqueMachado.position.x = abs(areaAtaqueMachado.position.x)
 		elif direction < 0:
 			animacao.flip_h = true
+			areaAtaqueMachado.position.x = -abs(areaAtaqueMachado.position.x)
+			areaAtaqueEspada.position.x = -abs(areaAtaqueEspada.position.x)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+
+func tamoAtacandotamoAtacando():
+	if Input.is_action_just_pressed("ataqueMachado"):
+		setarAtacandoMachado()
+		return
+
+	if Input.is_action_just_pressed("ataqueArco"):
+		setarAtacandoArco()
+		return
+
+	if Input.is_action_just_pressed("ataqueEspada"):
+		setarAtacandoEspada()
+		return
 
 func maquinaDeEstados():
 	print(animacao.name)
@@ -106,17 +121,7 @@ func state_idle():
 		setarPulando()
 		return
 
-	if Input.is_action_just_pressed("ataqueMachado"):
-		setarAtacandoMachado()
-		return
-
-	if Input.is_action_just_pressed("ataqueArco"):
-		setarAtacandoArco()
-		return
-
-	if Input.is_action_just_pressed("ataqueEspada"):
-		setarAtacandoEspada()
-		return
+	tamoAtacandotamoAtacando()
 
 
 func state_andando():
@@ -129,6 +134,8 @@ func state_andando():
 		setarPulando()
 		return
 	
+	tamoAtacandotamoAtacando()
+	
 func state_pulando():
 	puloDuplo()
 	andar()
@@ -137,24 +144,25 @@ func state_pulando():
 		return
 
 func state_atacandoMachado():
-	var area_ataque_colisao = false
+	
 	if animacao.frame in [2, 3]:
-		area_ataque_colisao = false
+		areaAtaqueMachado.disabled = false
 	else:
-		area_ataque_colisao = true
+		areaAtaqueMachado.disabled = true
 	pass
 
 func state_atacandoEspada():
-	var area_ataque_colisao = false
+
 	if animacao.frame in [2, 3]:
-		area_ataque_colisao = false
+		areaAtaqueEspada.disabled = false
 	else:
-		area_ataque_colisao = true
+		areaAtaqueEspada.disabled = true
 	pass
 
 func state_atacandoArco():
 	if animacao.frame == 4:
 		var atirar_flecha ="implementar método para atirar flecha"
+		#DisparoProjetil.setarFlecha()
 	pass
 
 
@@ -173,22 +181,24 @@ func setarPulando():
 
 func setarAtacandoMachado():
 	statusAtual = EstadoPlayer.atacandoMachado
-	velocity.x = 0
+	velocity.x = 0 #Deixa o Player parado quando ele está atacando
 	animacao.play("atqMachado")
-
-func setarAtacandoArco():
-	statusAtual = EstadoPlayer.atacandoArco
-	velocity.x = 0
-	#animacao.play("atqMachado")
 
 func setarAtacandoEspada():
 	statusAtual = EstadoPlayer.atacandoEspada
-	velocity.x = 0
-	#animacao.play("atqMachado")
+	velocity.x = 0 #Deixa o Player parado quando ele está atacando
+	#animacao.play("atqEspada")
+	
+func setarAtacandoArco():
+	statusAtual = EstadoPlayer.atacandoArco
+	velocity.x = 0 #Deixa o Player parado quando ele está atacando
+	#animacao.play("atqArco")
+
+
 
 #----------------Sinais----------------
 
-func _animacaoTeminou() -> void:
+func _on_animation_finished() -> void:
 	if statusAtual in [EstadoPlayer.atacandoMachado, EstadoPlayer.atacandoEspada, EstadoPlayer.atacandoArco]:
 		setarIdle()
 	pass # Replace with function body.

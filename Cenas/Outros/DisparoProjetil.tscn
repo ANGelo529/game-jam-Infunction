@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://boi028gfw5xm3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xrivr"]
+
+[node name="DisparoProjetil" type="Area2D" unique_id=345261590]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1465981146]
+position = Vector2(134, 0)
+shape = SubResource("CircleShape2D_xrivr")
