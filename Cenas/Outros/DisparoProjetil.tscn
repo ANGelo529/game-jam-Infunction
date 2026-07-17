@@ -1,9 +1,26 @@
 [gd_scene format=3 uid="uid://boi028gfw5xm3"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xrivr"]
+[ext_resource type="Script" uid="uid://dmayrj7ijm21e" path="res://Scripts/disparo_projetil.gd" id="1_hsval"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_364ok"]
+radius = 4.0
+height = 16.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xrivr"]
 
 [node name="DisparoProjetil" type="Area2D" unique_id=345261590]
+collision_layer = 16
+collision_mask = 7
+script = ExtResource("1_hsval")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1465981146]
-position = Vector2(134, 0)
-shape = SubResource("CircleShape2D_xrivr")
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_364ok")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=143963260]
+sprite_frames = SubResource("SpriteFrames_xrivr")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=760444057]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -98,6 +98,7 @@ dash={
 2d_physics/layer_2="Terrenos"
 2d_physics/layer_3="Inimigos"
 2d_physics/layer_4="Fim de Fase"
+2d_physics/layer_5="Projeteis"
 
 [physics]
 

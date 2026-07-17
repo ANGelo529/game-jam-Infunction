@@ -2,6 +2,8 @@ extends CharacterBody2D
 @onready var animacao: AnimatedSprite2D = $animacao
 @onready var areaAtaqueMachado: CollisionShape2D = $areaAtaqueMachado/ColisaoMachado
 @onready var areaAtaqueEspada: CollisionShape2D = $areaAtaqueEspada/colisaoEspada
+const DISPAROPROJETIL = preload("uid://boi028gfw5xm3")
+
 
 enum EstadoPlayer {
 	idle,
@@ -15,9 +17,12 @@ enum EstadoPlayer {
 var statusAtual = EstadoPlayer.idle
 const SPEED = 600
 const JUMP_VELOCITY = -400
-
+var jaAtirou = false
 var jumps = 2
 var taAtacando = false
+var direction := Input.get_axis("esquerda", "direita")
+var ultimaDirecao = 1
+
 
 func _ready() -> void:
 	animacao.animation_finished.connect(_on_animation_finished)
@@ -51,9 +56,17 @@ func gravidade(delta):
 		velocity += get_gravity() * delta
 		
 
+func atirarFlecha():
+	var flecha = DISPAROPROJETIL.instantiate()
+	add_sibling(flecha)
+	flecha.global_position = $posicaoFlecha.global_position
+	flecha.definirDirecao(self.ultimaDirecao)
 
 func andar():
-	var direction := Input.get_axis("esquerda", "direita")
+	direction = Input.get_axis("esquerda", "direita")
+	if direction != 0:
+		ultimaDirecao = direction
+	print(ultimaDirecao)
 	if direction:
 		velocity.x = direction * SPEED
 	
@@ -61,10 +74,12 @@ func andar():
 			animacao.flip_h = false
 			areaAtaqueEspada.position.x = abs(areaAtaqueEspada.position.x)
 			areaAtaqueMachado.position.x = abs(areaAtaqueMachado.position.x)
+			$posicaoFlecha.position.x = abs($posicaoFlecha.position.x)
 		elif direction < 0:
 			animacao.flip_h = true
 			areaAtaqueMachado.position.x = -abs(areaAtaqueMachado.position.x)
 			areaAtaqueEspada.position.x = -abs(areaAtaqueEspada.position.x)
+			$posicaoFlecha.position.x = -abs($posicaoFlecha.position.x)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
@@ -74,16 +89,19 @@ func tamoAtacandotamoAtacando():
 		setarAtacandoMachado()
 		return
 
-	if Input.is_action_just_pressed("ataqueArco"):
-		setarAtacandoArco()
-		return
-
 	if Input.is_action_just_pressed("ataqueEspada"):
 		setarAtacandoEspada()
 		return
 
+
+	if Input.is_action_just_pressed("ataqueArco"):
+		setarAtacandoArco()
+		return
+
+
+
 func maquinaDeEstados():
-	print(animacao.name)
+	print(statusAtual)
 	match statusAtual:
 		EstadoPlayer.idle:
 			print("idle")
@@ -153,16 +171,16 @@ func state_atacandoMachado():
 
 func state_atacandoEspada():
 
-	if animacao.frame in [2, 3]:
+	if animacao.frame in [2, 3] :
 		areaAtaqueEspada.disabled = false
 	else:
 		areaAtaqueEspada.disabled = true
 	pass
 
 func state_atacandoArco():
-	if animacao.frame == 4:
-		var atirar_flecha ="implementar método para atirar flecha"
-		#DisparoProjetil.setarFlecha()
+	if jaAtirou:
+		atirarFlecha()
+		jaAtirou = false
 	pass
 
 
@@ -178,6 +196,7 @@ func setarCorrendo():
 func setarPulando():
 	statusAtual = EstadoPlayer.pulando
 	velocity.y = JUMP_VELOCITY
+	#animacao.play("pulando")
 
 func setarAtacandoMachado():
 	statusAtual = EstadoPlayer.atacandoMachado
@@ -187,12 +206,13 @@ func setarAtacandoMachado():
 func setarAtacandoEspada():
 	statusAtual = EstadoPlayer.atacandoEspada
 	velocity.x = 0 #Deixa o Player parado quando ele está atacando
-	#animacao.play("atqEspada")
+	animacao.play("atqMachado")
 	
 func setarAtacandoArco():
 	statusAtual = EstadoPlayer.atacandoArco
 	velocity.x = 0 #Deixa o Player parado quando ele está atacando
-	#animacao.play("atqArco")
+	jaAtirou = true
+	animacao.play("atqMachado")
 
 
 

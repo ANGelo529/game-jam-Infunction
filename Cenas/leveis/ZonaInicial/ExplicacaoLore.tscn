@@ -184,7 +184,7 @@ metadata/_edit_vertical_guides_ = [1519.0]
 metadata/_edit_horizontal_guides_ = [512.0]
 
 [node name="Player" parent="." unique_id=1808323194 instance=ExtResource("1_71b8y")]
-position = Vector2(71, 190)
+position = Vector2(27, 191)
 
 [node name="Camera" parent="." unique_id=1353948410 instance=ExtResource("2_yqbgr")]
 position = Vector2(1, 146)
