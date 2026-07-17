@@ -211,5 +211,3 @@ offset = Vector2(0, -8)
 
 [node name="animator" type="AnimationPlayer" parent="." unique_id=1963817958]
 libraries/ = SubResource("AnimationLibrary_6ihxy")
-
-[connection signal="animation_finished" from="animacao" to="." method="_on_animacao_animation_finished"]

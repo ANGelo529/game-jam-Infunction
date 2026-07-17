@@ -8,6 +8,7 @@
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xounn"]
 texture = ExtResource("1_j1a7u")
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -20,6 +21,7 @@ texture = ExtResource("1_j1a7u")
 10:0/0 = 0
 11:0/0 = 0
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
@@ -136,6 +138,8 @@ texture = ExtResource("1_j1a7u")
 3:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_qc24j"]
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_xounn")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jaaol"]
@@ -146,6 +150,8 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAA
 tile_set = SubResource("TileSet_qc24j")
 
 [node name="Camera" parent="." unique_id=1353948410 instance=ExtResource("2_l3fcu")]
+limit_right = 2368
+limit_bottom = 224
 
 [node name="Player" parent="." unique_id=1808323194 instance=ExtResource("3_rxnhg")]
 position = Vector2(29, 189)

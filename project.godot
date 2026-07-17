@@ -20,10 +20,26 @@ Main="*uid://cqwr6jbrt1hpb"
 
 [display]
 
-window/size/viewport_width=500
-window/size/viewport_height=200
-window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/stretch/mode="viewport"
+
+[file_customization]
+
+folder_colors={
+"res://AssetsRoubados/": "yellow",
+"res://Cenas/": "teal",
+"res://Cenas/Inimigos/": "red",
+"res://Cenas/Main/": "yellow",
+"res://Cenas/Outros/": "green",
+"res://Cenas/Player/": "pink",
+"res://Cenas/leveis/": "blue",
+"res://Cenas/leveis/Puzzles/": "yellow",
+"res://Cenas/leveis/ZonaInicial/": "purple",
+"res://Cenas/leveis/zonaBossFinal/": "red",
+"res://Cenas/leveis/zonaCyber/": "blue",
+"res://Cenas/leveis/zonaMagia/": "pink",
+"res://Cenas/leveis/zonaTema/": "green",
+"res://Scripts/": "pink"
+}
 
 [global_group]
 
@@ -51,6 +67,26 @@ direita={
 pulo={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+]
+}
+ataqueArco={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(177, 16),"global_position":Vector2(186, 64),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+ataqueEspada={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(188, 1),"global_position":Vector2(197, 49),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+ataqueMachado={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
+dash={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
 ]
 }
 

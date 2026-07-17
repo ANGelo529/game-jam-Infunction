@@ -127,7 +127,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h4k7s")
 }],
-"loop": 0,
+"loop": 2,
 "name": &"atqMachado",
 "speed": 5.0
 }, {
@@ -204,12 +204,11 @@ position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_xrivr")
 
 [node name="animacao" type="AnimatedSprite2D" parent="." unique_id=1605520188]
-position = Vector2(0, 8)
 sprite_frames = SubResource("SpriteFrames_xrivr")
-animation = &"idle"
+animation = &"atqMachado"
 offset = Vector2(0, -8)
 
 [node name="animator" type="AnimationPlayer" parent="." unique_id=1963817958]
 libraries/ = SubResource("AnimationLibrary_6ihxy")
 
-[connection signal="animation_finished" from="animacao" to="." method="_on_animacao_animation_finished"]
+[connection signal="animation_finished" from="animacao" to="." method="animacaoTerminou"]

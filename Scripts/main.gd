@@ -10,18 +10,28 @@ var zonas = {
 	],
 	"ZonaMagia" = [
 		"res://Cenas/leveis/zonaMagia/EntradaMagia.tscn",
-		"res://Cenas/leveis/zonaMagia/zonaMagia2.tscn",
-		"res://Cenas/leveis/zonaMagia/CorridonaFoda.tscn"
+		"res://Cenas/leveis/zonaMagia/PracaMagica.tscn",
+		"res://Cenas/leveis/zonaMagia/CorridonaFoda.tscn",
+		"res://Cenas/leveis/zonaMagia/BossMagia.tscn"
 	],
 	"ZonaCyber" = [
 		"res://Cenas/leveis/zonaCyber/EntradaCyber.tscn",
-		"res://Cenas/leveis/zonaCyber/CyberPunk.tscn"
+		"res://Cenas/leveis/zonaCyber/CyberPunk.tscn",
+		"res://Cenas/leveis/zonaCyber/PredioCyberPunk.tscn",
+		"res://Cenas/leveis/zonaCyber/BossCyber.tscn"
 	],
 	"zonaTema" = [
-		"res://Cenas/leveis/zonaTema/EntradaTema.tscn"
-		
+		"res://Cenas/leveis/zonaTema/EntradaTema.tscn",
+		"res://Cenas/leveis/zonaTema/CasasTema.tscn",
+		"res://Cenas/leveis/zonaTema/DentroCasaTema.tscn",
+		"res://Cenas/leveis/zonaTema/BossTema.tscn"
 	]
 }
+var zonaBossFinal = [
+	"res://Cenas/leveis/zonaBossFinal/EntradaBossFinal.tscn",
+	"res://Cenas/leveis/zonaBossFinal/BossFinal.tscn"
+]
+
 var zonasJogadas = []
 var zonaAtual: String = "ZonaInicial"
 var indiceFaseAtual: int = 0
@@ -39,23 +49,34 @@ func _process(delta: float) -> void:
 func escolherZonaRandom():
 	if zonasJogadas.is_empty():
 		print("Começar o boss final")
+		zonaAtual = zonaBossFinal.pop_front()
+		carregarNovaFase()
 		return
 	
 	
-	if zonaAtual != "ZonaInicial":
-		zonasJogadas.shuffle()
-		zonaAtual = zonasJogadas.pop_front()
-	else:
-		zonaAtual = zonasJogadas.pop_front()
+	zonaAtual = zonasJogadas.pop_front()
+	randomize()
+	zonasJogadas.shuffle()
 	
 	print(zonaAtual)
 	carregarNovaFase()
 	
 func carregarNovaFase():
-	var listaFases = zonas[zonaAtual]
-	var caminhoFase = listaFases[indiceFaseAtual]
+	var listaFases = []
+	var caminhoFase = ""
+	if zonasJogadas.is_empty():
+		var listaBossFinal = zonaBossFinal
+		var faseBossFinal = listaBossFinal[indiceFaseAtual]
+		print(faseBossFinal)
+		get_tree().change_scene_to_file(faseBossFinal)
+	else:
+		listaFases = zonas[zonaAtual]
+		caminhoFase = listaFases[indiceFaseAtual]
+		print(caminhoFase)
+		get_tree().change_scene_to_file(caminhoFase)
 	
-	get_tree().change_scene_to_file(caminhoFase)
+	
+	
 	#call_deferred("_substituirCena",caminhoFase)
 	
 func _substituirCena(caminhoCena: String):
@@ -68,27 +89,15 @@ func _substituirCena(caminhoCena: String):
 	var instanciaNovaFase = novaFase.instantiate()
 	add_child(instanciaNovaFase)
 	
-	#if not novaCena:
-		#push_error("Erro ao carregar a cena: " + caminhoCena)
-		#return
-		#
-#
-	#var root = get_tree().root
-	#
-	## Deleta a fase antiga
-	#if get_tree().current_scene:
-		#get_tree().current_scene.free()
-		#
-	## Adiciona a nova fase e define como atual
-	#
-	#get_tree().current_scene = instanciaNovaFase
-
 func avancarFase() -> void:
 	var fasesZona = zonas[zonaAtual]
 	
-	if indiceFaseAtual < fasesZona.size() - indiceFaseAtual - 1:
+	if indiceFaseAtual < fasesZona.size() - 1:
+		print("trocando de fase")
 		indiceFaseAtual += 1
 		carregarNovaFase()
 	else:
+		indiceFaseAtual = 0
+		print("trocando de zona")
 		escolherZonaRandom()
 		
