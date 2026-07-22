@@ -1,72 +1,108 @@
 [gd_scene format=3 uid="uid://5t3gb5ejt4x4"]
 
-[sub_resource type="DrawableTexture2D" id="DrawableTexture2D_wi6ju"]
+[sub_resource type="FontFile" id="FontFile_7tib2"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="DrawableTexture2D" id="DrawableTexture2D_7mpdc"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wjv7q"]
+bg_color = Color(0.99999994, 0.35371086, 0.14838356, 1)
+border_color = Color(0.99999994, 0.35371086, 0.14838356, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
 
-[node name="BotãoUpgrades" type="TextureButton" unique_id=1080727201]
-anchors_preset = -1
-anchor_right = 0.69500005
-anchor_bottom = 0.81000006
-offset_left = 24.0
-offset_top = 25.0
-offset_right = -575.00006
-offset_bottom = -282.00003
-scale = Vector2(0.12601468, 0.27887428)
-disabled = true
-texture_normal = SubResource("DrawableTexture2D_wi6ju")
-texture_hover = SubResource("DrawableTexture2D_7mpdc")
-ignore_texture_size = true
-stretch_mode = 0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6a0g"]
+bg_color = Color(0.99999994, 0.35371086, 0.14838356, 1)
+border_color = Color(0.99999994, 0.35371086, 0.14838356, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
 
-[node name="raridade" type="Label" parent="." unique_id=1450425229]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7tib2"]
+bg_color = Color(1, 0, 0, 1)
+border_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xhq1e"]
+bg_color = Color(1, 0, 0, 1)
+border_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8qa0"]
+bg_color = Color(0, 1, 0, 1)
+border_color = Color(0, 1, 0, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="Theme" id="Theme_kill0"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/fonts/font = SubResource("FontFile_7tib2")
+Button/styles/focus = SubResource("StyleBoxFlat_wjv7q")
+Button/styles/hover = SubResource("StyleBoxFlat_a6a0g")
+Button/styles/normal = SubResource("StyleBoxFlat_7tib2")
+Button/styles/normal_mirrored = SubResource("StyleBoxFlat_xhq1e")
+Button/styles/pressed = SubResource("StyleBoxFlat_i8qa0")
+
+[node name="BotãoUpgrades" type="Button" unique_id=1565485915]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 238.00003
+offset_top = 152.0
+offset_right = -381.49707
+offset_bottom = 348.37842
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.24704139, 0.25848016)
+theme = SubResource("Theme_kill0")
+
+[node name="nomeUpgrade" type="Label" parent="." unique_id=1415557584]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -60.0
-offset_right = 60.0
-offset_bottom = 65.0
+offset_left = -35.0
+offset_right = 35.0
+offset_bottom = 23.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0.012617188, 0.012617188, 1)
-theme_override_font_sizes/font_size = 11
-text = "Raridade"
+text = "nome do upgrade
+"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="descricao" type="Label" parent="." unique_id=1237437182]
+[node name="descricao" type="Label" parent="." unique_id=486204826]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.76400006
-offset_left = -50.0
-offset_top = 2.0
-offset_right = 50.0
-offset_bottom = -7.8720093
+anchor_bottom = 0.5
+offset_left = -93.5
+offset_top = -11.5
+offset_right = 93.5
+offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0.012617188, 0.012617188, 1)
-theme_override_font_sizes/font_size = 9
-text = "Descrição Upgrade"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="nomeUpgrade" type="Label" parent="." unique_id=2079600426]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -59.0
-offset_top = -23.0
-offset_right = 59.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0.012617188, 0.012617188, 1)
-theme_override_font_sizes/font_size = 11
-text = "Nome Upgrade"
-horizontal_alignment = 1
-vertical_alignment = 1
+text = "descrição é aqui bababa"
+metadata/_edit_use_anchors_ = true

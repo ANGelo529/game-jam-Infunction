@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bhpyvumxybjit"]
 
+[ext_resource type="PackedScene" uid="uid://5t3gb5ejt4x4" path="res://Cenas/Outros/botãoUpgrades.tscn" id="1_3uyka"]
+
 [node name="Control" type="Control" unique_id=451972758]
 layout_mode = 3
 anchors_preset = 0
@@ -8,19 +10,31 @@ offset_bottom = 40.0
 
 [node name="Panel" type="Panel" parent="." unique_id=1463952598]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_right = 25.075
+anchor_bottom = 12.425
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1566497525]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 25.000002
+anchor_bottom = 12.500001
+offset_right = -6.1035156e-05
+offset_bottom = -3.0517578e-05
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=426681670]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=988372506]
 layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="BotãoUpgrades" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1565485915 instance=ExtResource("1_3uyka")]
+layout_mode = 2
+size_flags_horizontal = 4
