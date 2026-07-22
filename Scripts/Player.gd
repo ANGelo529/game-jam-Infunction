@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var areaAtaqueMachado: CollisionShape2D = $areaAtaqueMachado/ColisaoMachado
 @onready var areaAtaqueEspada: CollisionShape2D = $areaAtaqueEspada/colisaoEspada
 const DISPAROPROJETIL = preload("uid://boi028gfw5xm3")
+@onready var colisaoPlayer: CollisionShape2D = $colisaoPlayer
 
 
 enum EstadoPlayer {
@@ -13,7 +14,11 @@ enum EstadoPlayer {
 	atacandoArco,
 	atacandoEspada
 }
-
+var danoArmas = {
+	"machado": 2.0,
+	"espada": 1.0,
+	"arco": 0.5
+}
 var statusAtual = EstadoPlayer.idle
 const SPEED = 600
 const JUMP_VELOCITY = -400
@@ -22,6 +27,7 @@ var jumps = 2
 var taAtacando = false
 var direction := Input.get_axis("esquerda", "direita")
 var ultimaDirecao = 1
+var vida = 10.0
 
 
 func _ready() -> void:
@@ -44,11 +50,11 @@ func puloDuplo():
 		jumps = 2
 
 
-func atacar():
-	if Input.is_action_just_pressed("ataqueMachado"):
-		taAtacando = true
-		return taAtacando
-	return taAtacando
+#func atacar():
+	#if Input.is_action_just_pressed("ataqueMachado"):
+		#taAtacando = true
+		#return taAtacando
+	#return taAtacando
 
 
 func gravidade(delta):
@@ -163,8 +169,13 @@ func state_pulando():
 
 func state_atacandoMachado():
 	
-	if animacao.frame in [2, 3]:
+
+		
+	if animacao.frame in [0,1,2,3]:
+		
 		areaAtaqueMachado.disabled = false
+		if animacao.frame != 3:
+			position.y = position.y - 5
 	else:
 		areaAtaqueMachado.disabled = true
 	pass

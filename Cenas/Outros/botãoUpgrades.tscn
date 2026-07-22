@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://5t3gb5ejt4x4"]
+
+[sub_resource type="DrawableTexture2D" id="DrawableTexture2D_wi6ju"]
+
+[sub_resource type="DrawableTexture2D" id="DrawableTexture2D_7mpdc"]
+
+[node name="BotãoUpgrades" type="TextureButton" unique_id=1080727201]
+anchors_preset = -1
+anchor_right = 0.69500005
+anchor_bottom = 0.81000006
+offset_left = 24.0
+offset_top = 25.0
+offset_right = -575.00006
+offset_bottom = -282.00003
+scale = Vector2(0.12601468, 0.27887428)
+disabled = true
+texture_normal = SubResource("DrawableTexture2D_wi6ju")
+texture_hover = SubResource("DrawableTexture2D_7mpdc")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="raridade" type="Label" parent="." unique_id=1450425229]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_right = 60.0
+offset_bottom = 65.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.012617188, 0.012617188, 1)
+theme_override_font_sizes/font_size = 11
+text = "Raridade"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="descricao" type="Label" parent="." unique_id=1237437182]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.76400006
+offset_left = -50.0
+offset_top = 2.0
+offset_right = 50.0
+offset_bottom = -7.8720093
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.012617188, 0.012617188, 1)
+theme_override_font_sizes/font_size = 9
+text = "Descrição Upgrade"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="nomeUpgrade" type="Label" parent="." unique_id=2079600426]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -59.0
+offset_top = -23.0
+offset_right = 59.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0.012617188, 0.012617188, 1)
+theme_override_font_sizes/font_size = 11
+text = "Nome Upgrade"
+horizontal_alignment = 1
+vertical_alignment = 1
