@@ -34,7 +34,6 @@ folder_colors={
 "res://Cenas/Outros/": "green",
 "res://Cenas/Player/": "pink",
 "res://Cenas/leveis/": "blue",
-"res://Cenas/leveis/Puzzles/": "yellow",
 "res://Cenas/leveis/ZonaInicial/": "purple",
 "res://Cenas/leveis/zonaBossFinal/": "red",
 "res://Cenas/leveis/zonaCyber/": "blue",
@@ -99,6 +98,7 @@ dash={
 2d_physics/layer_3="Inimigos"
 2d_physics/layer_4="Fim de Fase"
 2d_physics/layer_5="Projeteis"
+2d_physics/layer_6="AtaqueInimigo"
 
 [physics]
 

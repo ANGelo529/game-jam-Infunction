@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://5t3gb5ejt4x4"]
 
+[ext_resource type="Texture2D" uid="uid://b7oyyu6si48pc" path="res://AssetsRoubados/cartaYugi.jpeg" id="1_kill0"]
+
 [sub_resource type="FontFile" id="FontFile_7tib2"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/variation_coordinates = {}
 cache/0/face_index = 0
 cache/0/embolden = 0.0
@@ -63,24 +68,101 @@ Button/styles/normal = SubResource("StyleBoxFlat_7tib2")
 Button/styles/normal_mirrored = SubResource("StyleBoxFlat_xhq1e")
 Button/styles/pressed = SubResource("StyleBoxFlat_i8qa0")
 
+[sub_resource type="GDScript" id="GDScript_kill0"]
+script/source = "extends Button
+@onready var nome_upgrade: Label = $nomeUpgrade
+@onready var descricao: Label = $descricao
+
+
+var upgradesValores = {
+\"0\": {
+	\"nome\":\"flechaDiferente\",
+	\"descricao\": \"Seu dano passa a ser o valor de um dado de 6 lados\"
+	},
+\"1\": {
+	\"nome\":\"Arco potente\",
+	\"descricao\": \"Dobra o dano do seu arco\"
+	},
+\"2\": {
+	\"nome\":\"Machado infectado\",
+	\"descricao\": \"Dobra o dano do seu machado\"
+	},
+\"3\": {
+	\"nome\":\"Super Espada\",
+	\"descricao\": \"Dobra o dano da sua espada\"
+	},
+\"4\": {
+	\"nome\":\"Dash\",
+	\"descricao\": \"Aumenta temporariamente a sua velocidade\"
+	},
+\"5\": {
+	\"nome\":\"Buff de Vida\",
+	\"descricao\": \"Aumenta permanentemente a sua vida\"
+	},
+\"6\": {
+	\"nome\":\"Buff de dano\",
+	\"descricao\": \"Aumenta permanentemente o dano de todas as suas armas\"
+	},
+\"7\": {
+	\"nome\":\"Buff de salto\",
+	\"descricao\": \"Aumenta permanentemente o tamanho do seu pulo\"
+	},
+\"8\": {
+	\"nome\":\"Que Racoon City nunca se repita\",
+	\"descricao\": \"Agora quando você apertar <f> você entrará em fúria e seu dano dobrará por 10 segundos\"
+	},
+\"9\": {
+	\"nome\":\"Espinhos\",
+	\"descricao\": \"Quando você levar dano o seu inimigo levará um dano equivalente a seu dano de espada\"
+	},
+\"10\": {
+	\"nome\":\"Quanto mais melhor\",
+	\"descricao\": \"Aumenta quantas flechas você pode atirar por fase\"
+	},
+\"11\": {
+	\"nome\":\"Barra de proteina\",
+	\"descricao\": \"Aumenta sua velocidade permanentemente\"
+	}
+}
+
+func _ready() -> void:
+	pass 
+
+
+
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_pressed() -> void:
+	pass # Replace with function body.
+"
+
 [node name="BotãoUpgrades" type="Button" unique_id=1565485915]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 238.00003
-offset_top = 152.0
-offset_right = -381.49707
-offset_bottom = 348.37842
+offset_left = 236.99998
+offset_top = 144.0
+offset_right = -382.49713
+offset_bottom = 340.37842
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.24704139, 0.25848016)
 theme = SubResource("Theme_kill0")
+icon = ExtResource("1_kill0")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = SubResource("GDScript_kill0")
 
 [node name="nomeUpgrade" type="Label" parent="." unique_id=1415557584]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
+anchors_preset = -1
+anchor_left = 0.40049452
+anchor_top = 0.13888888
+anchor_right = 0.5765773
+anchor_bottom = 0.17622493
 offset_left = -35.0
 offset_right = 35.0
 offset_bottom = 23.0
@@ -93,16 +175,20 @@ metadata/_edit_use_anchors_ = true
 
 [node name="descricao" type="Label" parent="." unique_id=486204826]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = -1
+anchor_left = 0.30955735
+anchor_top = 0.7276251
+anchor_right = 0.30955735
+anchor_bottom = 0.7276251
 offset_left = -93.5
 offset_top = -11.5
 offset_right = 93.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
 text = "descrição é aqui bababa"
 metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

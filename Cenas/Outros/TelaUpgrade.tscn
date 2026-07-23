@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bhpyvumxybjit"]
 
+[ext_resource type="Script" uid="uid://yc2bmklbee4p" path="res://Scripts/hBoxContainer.gd" id="1_1iyoe"]
 [ext_resource type="PackedScene" uid="uid://5t3gb5ejt4x4" path="res://Cenas/Outros/botãoUpgrades.tscn" id="1_3uyka"]
 
 [node name="Control" type="Control" unique_id=451972758]
@@ -8,33 +9,99 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Panel" type="Panel" parent="." unique_id=1463952598]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 25.075
-anchor_bottom = 12.425
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Background" type="Panel" parent="." unique_id=1243620690]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 999.0
+offset_bottom = 499.0
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1566497525]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 25.000002
-anchor_bottom = 12.500001
-offset_right = -6.1035156e-05
-offset_bottom = -3.0517578e-05
+anchor_right = 25.1
+anchor_bottom = 12.425
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=426681670]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2054233981]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 244.0
+offset_right = 965.0
+offset_bottom = 458.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1iyoe")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=988372506]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1020465652]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="BotãoUpgrades" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1565485915 instance=ExtResource("1_3uyka")]
+[node name="BotãoUpgrades" parent="VBoxContainer/HBoxContainer" unique_id=1565485915 instance=ExtResource("1_3uyka")]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="nomeUpgrade" parent="VBoxContainer/HBoxContainer/BotãoUpgrades" index="0" unique_id=1415557584]
+anchor_left = 0.408
+anchor_top = 0.05
+anchor_right = 0.60980725
+anchor_bottom = 0.15
+
+[node name="descricao" parent="VBoxContainer/HBoxContainer/BotãoUpgrades" index="1" unique_id=486204826]
+anchor_left = 0.5828313
+anchor_top = 0.8403846
+anchor_right = 0.5828313
+anchor_bottom = 0.8403846
+
+[node name="BotãoUpgrades2" parent="VBoxContainer/HBoxContainer" unique_id=628018813 instance=ExtResource("1_3uyka")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="nomeUpgrade" parent="VBoxContainer/HBoxContainer/BotãoUpgrades2" index="0" unique_id=1415557584]
+anchor_left = 0.40918157
+anchor_top = 0.053846154
+anchor_right = 0.5852643
+anchor_bottom = 0.15384616
+
+[node name="descricao" parent="VBoxContainer/HBoxContainer/BotãoUpgrades2" index="1" unique_id=486204826]
+anchor_left = 0.58885545
+anchor_top = 0.84807694
+anchor_right = 0.58885545
+anchor_bottom = 0.84807694
+
+[node name="BotãoUpgrades3" parent="VBoxContainer/HBoxContainer" unique_id=203389168 instance=ExtResource("1_3uyka")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="nomeUpgrade" parent="VBoxContainer/HBoxContainer/BotãoUpgrades3" index="0" unique_id=1415557584]
+anchor_left = 0.39939946
+anchor_top = 0.05
+anchor_right = 0.60060066
+anchor_bottom = 0.15
+
+[node name="descricao" parent="VBoxContainer/HBoxContainer/BotãoUpgrades3" index="1" unique_id=486204826]
+anchor_left = 0.5690691
+anchor_top = 0.8173077
+anchor_right = 0.5690691
+anchor_bottom = 0.8173077
+
+[node name="Label" type="Label" parent="." unique_id=1810791886]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 24.975
+anchor_bottom = 3.9750001
+theme_override_colors/font_color = Color(0.64887905, 0.32117212, 0, 1)
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/BotãoUpgrades" to="VBoxContainer" method="_on_botao_upgrades_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/BotãoUpgrades2" to="VBoxContainer" method="_on_botão_upgrades_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/BotãoUpgrades3" to="VBoxContainer" method="_on_botao_upgrades_pressed"]
+
+[editable path="VBoxContainer/HBoxContainer/BotãoUpgrades"]
+[editable path="VBoxContainer/HBoxContainer/BotãoUpgrades2"]
+[editable path="VBoxContainer/HBoxContainer/BotãoUpgrades3"]

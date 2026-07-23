@@ -233,3 +233,7 @@ func _on_animation_finished() -> void:
 	if statusAtual in [EstadoPlayer.atacandoMachado, EstadoPlayer.atacandoEspada, EstadoPlayer.atacandoArco]:
 		setarIdle()
 	pass # Replace with function body.
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
