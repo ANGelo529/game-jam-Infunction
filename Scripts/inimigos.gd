@@ -16,23 +16,21 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		
-	animation.play("zombie")
-
-	velocity.x = speed * direction
+	
+	if castAttack.is_colliding():
+		if cooldown.is_stopped():
+			ataque()
+	else :
+		if not is_attackin:
+			velocity.x = speed * direction
+			move_and_slide()
+			animation.play("zombie")
 	
 	if ray_cast_wall.is_colliding():
 		inverter_direcao()
 	
 	if not raycastchao.is_colliding():
 		inverter_direcao()
-	
-	if castAttack.is_colliding():
-		ataque()
-	
-	
-	
-	move_and_slide()
 
 func inverter_direcao() -> void:
 	direction *= -1
@@ -46,11 +44,16 @@ func inverter_direcao() -> void:
 	else:
 		animation.flip_h = false
 
-func ataque() -> void:
+func ataque():
 	is_attackin = true
+	velocity = Vector2.ZERO
 	animation.play("attack")
 	cooldown.start()
 
-func _on_animation_animation_finished(anim_name):
-	if anim_name == "attack":
+func _on_animation_enemy_animation_finished(animationName: StringName) -> void:
+	if animationName == "attack":
 		is_attackin = false
+
+func _on_hitbox_body_entered(player: Node2D) -> void:
+	if player.has_method("dano"):
+		player.dano()

@@ -262,7 +262,6 @@ position = Vector2(1, 0)
 scale = Vector2(0.032242063, 0.029481662)
 sprite_frames = SubResource("SpriteFrames_xepy2")
 animation = &"zombie"
-frame_progress = 0.37656975
 
 [node name="rayAttack" type="RayCast2D" parent="." unique_id=1981218781]
 target_position = Vector2(18, 0)
@@ -276,3 +275,7 @@ shape = SubResource("RectangleShape2D_k4pr2")
 disabled = true
 
 [node name="cooldown" type="Timer" parent="." unique_id=1856145707]
+wait_time = 1.5
+
+[connection signal="animation_finished" from="AnimationEnemy" to="." method="_on_animation_enemy_animation_finished"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

@@ -104,7 +104,9 @@ func tamoAtacandotamoAtacando():
 		setarAtacandoArco()
 		return
 
-
+func dano():
+	vida -= 1
+	set_physics_process(false)
 
 func maquinaDeEstados():
 	print(statusAtual)
