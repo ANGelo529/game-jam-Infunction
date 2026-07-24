@@ -1,50 +1,25 @@
 [gd_scene format=3 uid="uid://du6lve76rtbl8"]
 
 [ext_resource type="Script" uid="uid://2gcwgmtegpuk" path="res://Scripts/Player.gd" id="1_r8ryd"]
-[ext_resource type="Texture2D" uid="uid://ce5d4olslnw3v" path="res://AssetsRoubados/2 - Holly/Ground_smash (64 x 48).png" id="2_5akqg"]
 [ext_resource type="Texture2D" uid="uid://bx5y14q213phv" path="res://AssetsRoubados/Assets/131 Sem Título_20260722235211.png" id="2_bsnao"]
 [ext_resource type="Texture2D" uid="uid://5srdqqoujnwp" path="res://AssetsRoubados/2 - Holly/Running (32 x 32).png" id="2_r8ryd"]
+[ext_resource type="Texture2D" uid="uid://cqgqy74h4k2p0" path="res://AssetsRoubados/Assets/arco1.png" id="2_tqt4m"]
 [ext_resource type="Texture2D" uid="uid://fd5ex8rj3igf" path="res://AssetsRoubados/2 - Holly/Idle (32 x 32).png" id="3_5akqg"]
 [ext_resource type="Texture2D" uid="uid://d3a0jwu76v4mb" path="res://AssetsRoubados/Assets/131 Sem Título_20260722232808.png" id="3_dah5n"]
 [ext_resource type="Texture2D" uid="uid://clxx63wq0kk3i" path="res://AssetsRoubados/Assets/131 Sem Título_20260722232752.png" id="3_qhdav"]
+[ext_resource type="Texture2D" uid="uid://dpxo4lo4y5tqa" path="res://AssetsRoubados/Assets/espada_machado1.png" id="3_vf6lm"]
+[ext_resource type="Texture2D" uid="uid://0ufo6jd444ig" path="res://AssetsRoubados/Assets/espada_machado2.png" id="4_tqt4m"]
 [ext_resource type="Script" uid="uid://c3ivgk5qfgot7" path="res://Scripts/areaAtaqueMachado.gd" id="5_4o7c8"]
+[ext_resource type="Texture2D" uid="uid://byedhvbreps3s" path="res://AssetsRoubados/Assets/espada_machado3.png" id="5_mow34"]
+[ext_resource type="Texture2D" uid="uid://csweomt5xlph0" path="res://AssetsRoubados/Assets/espada_machado4.png" id="6_lamxu"]
 [ext_resource type="Script" uid="uid://6g8ls6xhqn6p" path="res://Scripts/areaAtaqueEspada.gd" id="6_xjvfg"]
 [ext_resource type="Texture2D" uid="uid://cap1r4fa5xp87" path="res://AssetsRoubados/Assets/131 Sem Título_20260722235201.png" id="7_dah5n"]
+[ext_resource type="Texture2D" uid="uid://igrl4cirinbp" path="res://AssetsRoubados/Assets/espada_machado5.png" id="7_ma6wq"]
+[ext_resource type="Texture2D" uid="uid://cd6tw56qglrrf" path="res://AssetsRoubados/Assets/espada_machado6.png" id="8_k46qe"]
+[ext_resource type="Texture2D" uid="uid://5jrdy4k0de7" path="res://AssetsRoubados/Assets/espada_machado7.png" id="9_nuox4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(17, 47)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ma6wq"]
-atlas = ExtResource("2_5akqg")
-region = Rect2(0, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k46qe"]
-atlas = ExtResource("2_5akqg")
-region = Rect2(64, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nuox4"]
-atlas = ExtResource("2_5akqg")
-region = Rect2(128, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i1jv8"]
-atlas = ExtResource("2_5akqg")
-region = Rect2(192, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0qac1"]
-atlas = ExtResource("2_5akqg")
-region = Rect2(256, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ksbsh"]
-atlas = ExtResource("2_5akqg")
-region = Rect2(384, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wt4ar"]
-atlas = ExtResource("2_5akqg")
-region = Rect2(320, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h4k7s"]
-atlas = ExtResource("2_5akqg")
-region = Rect2(448, 0, 64, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ihxy"]
 atlas = ExtResource("2_r8ryd")
@@ -110,30 +85,38 @@ region = Rect2(256, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ma6wq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k46qe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nuox4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i1jv8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0qac1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ksbsh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wt4ar")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h4k7s")
+"texture": ExtResource("2_tqt4m")
 }],
-"loop": 0,
+"loop": 1,
+"name": &"atqArco",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qhdav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vf6lm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tqt4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mow34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lamxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ma6wq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_k46qe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nuox4")
+}],
+"loop": 1,
 "name": &"atqMachado",
 "speed": 5.0
 }, {
@@ -238,8 +221,7 @@ shape = SubResource("RectangleShape2D_xrivr")
 position = Vector2(-3.8146973e-06, 0)
 scale = Vector2(0.03533296, 0.034297813)
 sprite_frames = SubResource("SpriteFrames_xrivr")
-animation = &"idle"
-frame_progress = 0.7581718
+animation = &"atqArco"
 
 [node name="areaAtaqueMachado" type="Area2D" parent="." unique_id=1331237757]
 collision_mask = 4

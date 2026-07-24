@@ -7,6 +7,7 @@ const DISPAROPROJETIL = preload("uid://boi028gfw5xm3")
 @onready var invensibilidade: Timer = $invencibilidade
 
 
+
 enum EstadoPlayer {
 	idle,
 	correndo,
@@ -70,6 +71,8 @@ func gravidade(delta):
 
 func atirarFlecha():
 	var flecha = DISPAROPROJETIL.instantiate()
+	var animacao = flecha.get_node("animacao")
+	animacao.play("giroFlecha")
 	add_sibling(flecha)
 	flecha.global_position = $posicaoFlecha.global_position
 	flecha.definirDirecao(self.ultimaDirecao)
@@ -205,6 +208,9 @@ func state_atacandoArco():
 	if jaAtirou:
 		atirarFlecha()
 		jaAtirou = false
+	else:
+		setarIdle()
+	
 	pass
 
 

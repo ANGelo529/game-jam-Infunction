@@ -1,12 +1,55 @@
 [gd_scene format=3 uid="uid://boi028gfw5xm3"]
 
 [ext_resource type="Script" uid="uid://dmayrj7ijm21e" path="res://Scripts/disparo_projetil.gd" id="1_hsval"]
+[ext_resource type="Texture2D" uid="uid://mrwsbonqrq7e" path="res://AssetsRoubados/Assets/136 Sem Título_20260722163826.png" id="2_5smn7"]
+[ext_resource type="Texture2D" uid="uid://dgwm2xep80j8f" path="res://AssetsRoubados/Assets/136 Sem Título_20260722163835.png" id="3_27frh"]
+[ext_resource type="Texture2D" uid="uid://cy08530535k0e" path="res://AssetsRoubados/Assets/136 Sem Título_20260722163842.png" id="4_3agve"]
+[ext_resource type="Texture2D" uid="uid://b6sx1swbvv6vo" path="res://AssetsRoubados/Assets/136 Sem Título_20260722163849.png" id="5_swhqt"]
+[ext_resource type="Texture2D" uid="uid://cing5ah8mapo6" path="res://AssetsRoubados/Assets/136 Sem Título_20260722163855.png" id="6_h51o3"]
+[ext_resource type="Texture2D" uid="uid://dwq7gmvldgeii" path="res://AssetsRoubados/Assets/136 Sem Título_20260722163903.png" id="7_rvbiu"]
+[ext_resource type="Texture2D" uid="uid://bkhy20dtd4wm8" path="res://AssetsRoubados/Assets/136 Sem Título_20260722163907.png" id="8_r5dgd"]
+[ext_resource type="Texture2D" uid="uid://bmmyv8nxh131n" path="res://AssetsRoubados/Assets/136 Sem Título_20260722163916.png" id="9_f0c7o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_364ok"]
-radius = 4.0
-height = 16.0
+radius = 11.0
+height = 22.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xrivr"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5smn7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_27frh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3agve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_swhqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_h51o3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rvbiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_r5dgd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_f0c7o")
+}],
+"loop": 1,
+"name": &"giroFlecha",
+"speed": 5.0
+}]
 
 [node name="DisparoProjetil" type="Area2D" unique_id=345261590]
 collision_layer = 16
@@ -17,10 +60,15 @@ script = ExtResource("1_hsval")
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_364ok")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=143963260]
+[node name="animacao" type="AnimatedSprite2D" parent="." unique_id=143963260]
+position = Vector2(0, 2)
+scale = Vector2(0.026984131, 0.03364521)
 sprite_frames = SubResource("SpriteFrames_xrivr")
+animation = &"giroFlecha"
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=760444057]
+position = Vector2(0, -1)
+rect = Rect2(-13, -12, 25, 24)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
