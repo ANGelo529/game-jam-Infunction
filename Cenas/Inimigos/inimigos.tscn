@@ -3,42 +3,11 @@
 [ext_resource type="Script" uid="uid://fwnpb16wch1r" path="res://Scripts/inimigos.gd" id="1_goid3"]
 [ext_resource type="Texture2D" uid="uid://bw8slwoh4awcc" path="res://AssetsRoubados/knight.png" id="1_kwnns"]
 [ext_resource type="Texture2D" uid="uid://bobxfh13q3uvm" path="res://AssetsRoubados/Assets/137 Sem Título_20260723125510.png" id="3_wt5b0"]
+[ext_resource type="Texture2D" uid="uid://c0wb3xtk1ujf" path="res://AssetsRoubados/Assets/137 Sem Título_20260723132721.png" id="4_wt5b0"]
 [ext_resource type="Texture2D" uid="uid://6b1fvp4ty5m" path="res://AssetsRoubados/Assets/137 Sem Título_20260723132237.png" id="5_3ku27"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xepy2"]
 size = Vector2(20, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s7yay"]
-atlas = ExtResource("1_kwnns")
-region = Rect2(0, 160, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x0285"]
-atlas = ExtResource("1_kwnns")
-region = Rect2(32, 160, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ja3id"]
-atlas = ExtResource("1_kwnns")
-region = Rect2(64, 160, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k2nh2"]
-atlas = ExtResource("1_kwnns")
-region = Rect2(96, 160, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1nph1"]
-atlas = ExtResource("1_kwnns")
-region = Rect2(128, 160, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nu3tq"]
-atlas = ExtResource("1_kwnns")
-region = Rect2(160, 160, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ykbop"]
-atlas = ExtResource("1_kwnns")
-region = Rect2(192, 160, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kd82w"]
-atlas = ExtResource("1_kwnns")
-region = Rect2(224, 160, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_goid3"]
 atlas = ExtResource("1_kwnns")
@@ -124,32 +93,17 @@ region = Rect2(224, 96, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s7yay")
+"texture": ExtResource("5_3ku27")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x0285")
+"texture": ExtResource("3_wt5b0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ja3id")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k2nh2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1nph1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nu3tq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ykbop")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kd82w")
+"texture": ExtResource("4_wt5b0")
 }],
-"loop": 1,
-"name": &"attack",
-"speed": 10.0
+"loop": 0,
+"name": &"ataque",
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -261,7 +215,7 @@ collision_mask = 2
 position = Vector2(1, 0)
 scale = Vector2(0.032242063, 0.029481662)
 sprite_frames = SubResource("SpriteFrames_xepy2")
-animation = &"zombie"
+animation = &"ataque"
 
 [node name="rayAttack" type="RayCast2D" parent="." unique_id=1981218781]
 target_position = Vector2(18, 0)
@@ -276,6 +230,8 @@ disabled = true
 
 [node name="cooldown" type="Timer" parent="." unique_id=1856145707]
 wait_time = 1.5
+one_shot = true
 
 [connection signal="animation_finished" from="AnimationEnemy" to="." method="_on_animation_enemy_animation_finished"]
+[connection signal="sprite_frames_changed" from="AnimationEnemy" to="." method="_on_animation_enemy_sprite_frames_changed"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

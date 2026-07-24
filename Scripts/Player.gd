@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var areaAtaqueEspada: CollisionShape2D = $areaAtaqueEspada/colisaoEspada
 const DISPAROPROJETIL = preload("uid://boi028gfw5xm3")
 @onready var colisaoPlayer: CollisionShape2D = $colisaoPlayer
+@onready var invensibilidade: Timer = $invencibilidade
 
 
 enum EstadoPlayer {
@@ -28,6 +29,7 @@ var taAtacando = false
 var direction := Input.get_axis("esquerda", "direita")
 var ultimaDirecao = 1
 var vida = 10.0
+var pode_dano = true
 
 
 func _ready() -> void:
@@ -38,6 +40,10 @@ func _physics_process(delta: float) -> void:
 	gravidade(delta)
 	maquinaDeEstados()
 	move_and_slide()
+	
+	if invensibilidade.is_stopped():
+		pode_dano = true
+
 
 
 #----------------Métodos utilitários----------------
@@ -106,7 +112,12 @@ func tamoAtacandotamoAtacando():
 
 func dano():
 	vida -= 1
-	set_physics_process(false)
+	print(vida)
+	invensibilidade.start()
+	pode_dano = false
+	
+	if vida <= 0:
+		set_physics_process(false)
 
 func maquinaDeEstados():
 	print(statusAtual)
