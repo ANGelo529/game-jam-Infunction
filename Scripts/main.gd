@@ -13,14 +13,20 @@ var zonas = {
 	#],
 	"ZonaCyber" = [
 		"res://Cenas/leveis/zonaCyber/EntradaCyber.tscn",
+		#"res://Cenas/Outros/TelaUpgrade.tscn",
 		"res://Cenas/leveis/zonaCyber/CyberPunk.tscn",
-		"res://Cenas/leveis/zonaCyber/PredioCyberPunk.tscn"
+		#"res://Cenas/Outros/TelaUpgrade.tscn",
+		"res://Cenas/leveis/zonaCyber/PredioCyberPunk.tscn",
+		#"res://Cenas/Outros/TelaUpgrade.tscn"
 		#"res://Cenas/leveis/zonaCyber/BossCyber.tscn"
 	],
 	"zonaTema" = [
 		"res://Cenas/leveis/zonaTema/EntradaTema.tscn",
+		#"res://Cenas/Outros/TelaUpgrade.tscn",
 		"res://Cenas/leveis/zonaTema/CasasTema.tscn",
-		"res://Cenas/leveis/zonaTema/DentroCasaTema.tscn"
+		#"res://Cenas/Outros/TelaUpgrade.tscn",
+		"res://Cenas/leveis/zonaTema/DentroCasaTema.tscn",
+		#"res://Cenas/Outros/TelaUpgrade.tscn"
 		#"res://Cenas/leveis/zonaTema/BossTema.tscn"
 	]
 }

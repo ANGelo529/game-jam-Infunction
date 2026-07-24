@@ -1,5 +1,5 @@
 extends Area2D
-@onready var armas: CanvasLayer = $"../Camera/armas"
+@onready var canvas_layer: CanvasLayer = $"../Camera/CanvasLayer"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		armas.visible = true
+		canvas_layer.visible = true
 	pass # Replace with function body.

@@ -2,6 +2,8 @@ extends VBoxContainer
 
 # Aponta para o VBoxContainer que guarda os botões
 @onready var containerVertical = $HBoxContainer 
+@onready var player: CharacterBody2D = $"../Player"
+@onready var finalDeFase: Area2D = $"../FinalDeFase"
 
 var upgradesValores = {
 	"0": {"nome":"flechaDiferente", "descricao": "Seu dano passa a ser o valor de um dado de 6 lados"},
@@ -46,7 +48,8 @@ func gerar_opcoes_de_upgrade() -> void:
 
 func _on_botao_upgrades_pressed(botaoClicado: Button) -> void:
 	var idBotaoClicado = botaoClicado.get_meta("idUpgrade")
-	aplicarEfeitoPlayer(idBotaoClicado)
+	await aplicarEfeitoPlayer(idBotaoClicado)
+	player.global_position = finalDeFase.gloval_position
 
 func aplicarEfeitoPlayer(id:String):
 	match id:

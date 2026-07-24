@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://yc2bmklbee4p" path="res://Scripts/hBoxContainer.gd" id="1_1iyoe"]
 [ext_resource type="PackedScene" uid="uid://5t3gb5ejt4x4" path="res://Cenas/Outros/botãoUpgrades.tscn" id="1_3uyka"]
+[ext_resource type="PackedScene" uid="uid://du6lve76rtbl8" path="res://Cenas/Player/Player.tscn" id="3_mh6jk"]
+[ext_resource type="PackedScene" uid="uid://cp1ksb4jifg85" path="res://Cenas/Outros/FinalDeFase.tscn" id="4_m0lvk"]
 
 [node name="Control" type="Control" unique_id=451972758]
 layout_mode = 3
@@ -97,6 +99,12 @@ anchors_preset = -1
 anchor_right = 24.975
 anchor_bottom = 3.9750001
 theme_override_colors/font_color = Color(0.64887905, 0.32117212, 0, 1)
+
+[node name="Player" parent="." unique_id=1808323194 instance=ExtResource("3_mh6jk")]
+position = Vector2(-89, 113)
+
+[node name="FinalDeFase" parent="." unique_id=1061367317 instance=ExtResource("4_m0lvk")]
+position = Vector2(-11, -10)
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/BotãoUpgrades" to="VBoxContainer" method="_on_botao_upgrades_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/BotãoUpgrades2" to="VBoxContainer" method="_on_botão_upgrades_pressed"]
