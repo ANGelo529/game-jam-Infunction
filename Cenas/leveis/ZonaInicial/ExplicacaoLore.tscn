@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://43o88erw70ft" path="res://Scripts/TextoTutorial.gd" id="5_th647"]
 [ext_resource type="Script" uid="uid://drp3a7efo13ry" path="res://Scripts/bau.gd" id="7_364ok"]
 [ext_resource type="PackedScene" uid="uid://c7gml16e2i8j4" path="res://Cenas/Inimigos/inimigos.tscn" id="8_1pg6b"]
-[ext_resource type="Script" uid="uid://fwnpb16wch1r" path="res://Scripts/inimigos.gd" id="9_by66d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_th647"]
 texture = ExtResource("1_yqbgr")
@@ -186,7 +185,7 @@ metadata/_edit_vertical_guides_ = [1519.0]
 metadata/_edit_horizontal_guides_ = [512.0]
 
 [node name="Player" parent="." unique_id=1808323194 instance=ExtResource("1_71b8y")]
-position = Vector2(27, 191)
+position = Vector2(51, 186)
 
 [node name="Camera" parent="." unique_id=1353948410 instance=ExtResource("2_yqbgr")]
 position = Vector2(1, 146)
@@ -237,7 +236,6 @@ shape = SubResource("RectangleShape2D_13qdw")
 
 [node name="Inimigo" parent="." unique_id=1347364911 instance=ExtResource("8_1pg6b")]
 position = Vector2(102, 360)
-script = ExtResource("9_by66d")
 
 [connection signal="body_entered" from="FinalDeFase" to="FinalDeFase" method="_on_body_entered"]
 [connection signal="body_shape_entered" from="Area2D" to="Area2D" method="_on_body_shape_entered"]

@@ -77,12 +77,12 @@ func andar():
 		velocity.x = direction * SPEED
 	
 		if direction > 0:
-			animacao.flip_h = false
+			animacao.flip_h = true
 			areaAtaqueEspada.position.x = abs(areaAtaqueEspada.position.x)
 			areaAtaqueMachado.position.x = abs(areaAtaqueMachado.position.x)
 			$posicaoFlecha.position.x = abs($posicaoFlecha.position.x)
 		elif direction < 0:
-			animacao.flip_h = true
+			animacao.flip_h = false
 			areaAtaqueMachado.position.x = -abs(areaAtaqueMachado.position.x)
 			areaAtaqueEspada.position.x = -abs(areaAtaqueEspada.position.x)
 			$posicaoFlecha.position.x = -abs($posicaoFlecha.position.x)

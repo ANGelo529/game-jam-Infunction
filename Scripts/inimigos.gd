@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		
-	animation.play("run")
+	animation.play("zombie")
 
 	velocity.x = speed * direction
 	
@@ -38,11 +38,13 @@ func inverter_direcao() -> void:
 	direction *= -1
 	ray_cast_wall.target_position *= -1
 	raycastchao.position.x *= -1 
+	castAttack.target_position *= -1
+	attack.position.x *= -1
 	
 	if direction == 1:
-		animation.flip_h = false
-	else:
 		animation.flip_h = true
+	else:
+		animation.flip_h = false
 
 func ataque() -> void:
 	is_attackin = true

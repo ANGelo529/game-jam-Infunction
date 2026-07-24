@@ -1,14 +1,18 @@
 [gd_scene format=3 uid="uid://du6lve76rtbl8"]
 
-[ext_resource type="Script" uid="uid://bdoq5bfj3vtbt" path="res://Scripts/Player.gd" id="1_r8ryd"]
+[ext_resource type="Script" uid="uid://2gcwgmtegpuk" path="res://Scripts/Player.gd" id="1_r8ryd"]
 [ext_resource type="Texture2D" uid="uid://ce5d4olslnw3v" path="res://AssetsRoubados/2 - Holly/Ground_smash (64 x 48).png" id="2_5akqg"]
+[ext_resource type="Texture2D" uid="uid://bx5y14q213phv" path="res://AssetsRoubados/Assets/131 Sem Título_20260722235211.png" id="2_bsnao"]
 [ext_resource type="Texture2D" uid="uid://5srdqqoujnwp" path="res://AssetsRoubados/2 - Holly/Running (32 x 32).png" id="2_r8ryd"]
 [ext_resource type="Texture2D" uid="uid://fd5ex8rj3igf" path="res://AssetsRoubados/2 - Holly/Idle (32 x 32).png" id="3_5akqg"]
+[ext_resource type="Texture2D" uid="uid://d3a0jwu76v4mb" path="res://AssetsRoubados/Assets/131 Sem Título_20260722232808.png" id="3_dah5n"]
+[ext_resource type="Texture2D" uid="uid://clxx63wq0kk3i" path="res://AssetsRoubados/Assets/131 Sem Título_20260722232752.png" id="3_qhdav"]
 [ext_resource type="Script" uid="uid://c3ivgk5qfgot7" path="res://Scripts/areaAtaqueMachado.gd" id="5_4o7c8"]
 [ext_resource type="Script" uid="uid://6g8ls6xhqn6p" path="res://Scripts/areaAtaqueEspada.gd" id="6_xjvfg"]
+[ext_resource type="Texture2D" uid="uid://cap1r4fa5xp87" path="res://AssetsRoubados/Assets/131 Sem Título_20260722235201.png" id="7_dah5n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
-size = Vector2(20, 26)
+size = Vector2(17, 47)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ma6wq"]
 atlas = ExtResource("2_5akqg")
@@ -135,6 +139,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_dah5n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bsnao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qhdav")
+}],
+"loop": 1,
+"name": &"correndo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_6ihxy")
 }, {
 "duration": 1.0,
@@ -153,8 +171,19 @@ animations = [{
 "texture": SubResource("AtlasTexture_dah5n")
 }],
 "loop": 1,
-"name": &"correndo",
+"name": &"correndo_ant",
 "speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bsnao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dah5n")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -185,7 +214,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_lamxu")
 }],
 "loop": 1,
-"name": &"idle",
+"name": &"idle_ant",
 "speed": 5.0
 }]
 
@@ -202,12 +231,15 @@ collision_mask = 14
 script = ExtResource("1_r8ryd")
 
 [node name="colisaoPlayer" type="CollisionShape2D" parent="." unique_id=1573373622]
+position = Vector2(-0.5, -2.5)
 shape = SubResource("RectangleShape2D_xrivr")
 
 [node name="animacao" type="AnimatedSprite2D" parent="." unique_id=1605520188]
-position = Vector2(0, -3)
+position = Vector2(-3.8146973e-06, 0)
+scale = Vector2(0.03533296, 0.034297813)
 sprite_frames = SubResource("SpriteFrames_xrivr")
 animation = &"idle"
+frame_progress = 0.7581718
 
 [node name="areaAtaqueMachado" type="Area2D" parent="." unique_id=1331237757]
 collision_mask = 4

@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://fwnpb16wch1r" path="res://Scripts/inimigos.gd" id="1_goid3"]
 [ext_resource type="Texture2D" uid="uid://bw8slwoh4awcc" path="res://AssetsRoubados/knight.png" id="1_kwnns"]
+[ext_resource type="Texture2D" uid="uid://bobxfh13q3uvm" path="res://AssetsRoubados/Assets/137 Sem Título_20260723125510.png" id="3_wt5b0"]
+[ext_resource type="Texture2D" uid="uid://6b1fvp4ty5m" path="res://AssetsRoubados/Assets/137 Sem Título_20260723132237.png" id="5_3ku27"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xepy2"]
-size = Vector2(16, 18.25)
+size = Vector2(20, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s7yay"]
 atlas = ExtResource("1_kwnns")
@@ -218,6 +220,20 @@ animations = [{
 "loop": 1,
 "name": &"run",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wt5b0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3ku27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3ku27")
+}],
+"loop": 1,
+"name": &"zombie",
+"speed": 7.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4pr2"]
@@ -229,32 +245,33 @@ collision_mask = 2
 script = ExtResource("1_goid3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1997897291]
-position = Vector2(0, -2)
+position = Vector2(-1, -1)
 shape = SubResource("RectangleShape2D_xepy2")
 
 [node name="RayCastWall" type="RayCast2D" parent="." unique_id=361495882]
-target_position = Vector2(21, 0)
+target_position = Vector2(15, 0)
 collision_mask = 2
 
 [node name="RayCast" type="RayCast2D" parent="." unique_id=757751064]
-position = Vector2(9, 6)
+position = Vector2(11, 15)
 target_position = Vector2(0, 14)
 collision_mask = 2
 
 [node name="AnimationEnemy" type="AnimatedSprite2D" parent="." unique_id=1641551389]
-position = Vector2(0, -5)
+position = Vector2(1, 0)
+scale = Vector2(0.032242063, 0.029481662)
 sprite_frames = SubResource("SpriteFrames_xepy2")
-animation = &"attack"
-frame_progress = 0.22477554
+animation = &"zombie"
+frame_progress = 0.37656975
 
 [node name="rayAttack" type="RayCast2D" parent="." unique_id=1981218781]
-target_position = Vector2(21, 0)
+target_position = Vector2(18, 0)
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=502698655]
 collision_layer = 32
 
 [node name="Attack" type="CollisionShape2D" parent="Hitbox" unique_id=369726142]
-position = Vector2(17, 1)
+position = Vector2(18, 0)
 shape = SubResource("RectangleShape2D_k4pr2")
 disabled = true
 
