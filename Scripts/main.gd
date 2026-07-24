@@ -5,23 +5,23 @@ var zonas = {
 	"ZonaInicial" = [
 		"res://Cenas/leveis/ZonaInicial/ExplicacaoLore.tscn"
 	],
-	"ZonaMagia" = [
-		"res://Cenas/leveis/zonaMagia/EntradaMagia.tscn",
-		"res://Cenas/leveis/zonaMagia/PracaMagica.tscn",
-		"res://Cenas/leveis/zonaMagia/CorridonaFoda.tscn",
-		"res://Cenas/leveis/zonaMagia/BossMagia.tscn"
-	],
+	#"ZonaMagia" = [
+		#"res://Cenas/leveis/zonaMagia/EntradaMagia.tscn",
+		#"res://Cenas/leveis/zonaMagia/PracaMagica.tscn",
+		#"res://Cenas/leveis/zonaMagia/CorridonaFoda.tscn",
+		#"res://Cenas/leveis/zonaMagia/BossMagia.tscn"
+	#],
 	"ZonaCyber" = [
 		"res://Cenas/leveis/zonaCyber/EntradaCyber.tscn",
 		"res://Cenas/leveis/zonaCyber/CyberPunk.tscn",
-		"res://Cenas/leveis/zonaCyber/PredioCyberPunk.tscn",
-		"res://Cenas/leveis/zonaCyber/BossCyber.tscn"
+		"res://Cenas/leveis/zonaCyber/PredioCyberPunk.tscn"
+		#"res://Cenas/leveis/zonaCyber/BossCyber.tscn"
 	],
 	"zonaTema" = [
 		"res://Cenas/leveis/zonaTema/EntradaTema.tscn",
 		"res://Cenas/leveis/zonaTema/CasasTema.tscn",
-		"res://Cenas/leveis/zonaTema/DentroCasaTema.tscn",
-		"res://Cenas/leveis/zonaTema/BossTema.tscn"
+		"res://Cenas/leveis/zonaTema/DentroCasaTema.tscn"
+		#"res://Cenas/leveis/zonaTema/BossTema.tscn"
 	]
 }
 var zonaBossFinal = [
