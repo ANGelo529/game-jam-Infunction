@@ -266,6 +266,10 @@ debug_color = Color(0.43647194, 0.02244403, 9.62615e-08, 0.41960785)
 [node name="posicaoFlecha" type="Marker2D" parent="." unique_id=1783902253]
 position = Vector2(13, 4)
 
+[node name="invencibilidade" type="Timer" parent="." unique_id=79714289]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="animation_finished" from="animacao" to="." method="_on_animacao_animation_finished"]
 [connection signal="body_entered" from="areaAtaqueMachado" to="areaAtaqueMachado" method="_on_body_entered"]
 [connection signal="body_entered" from="areaAtaqueEspada" to="areaAtaqueEspada" method="_on_body_entered"]

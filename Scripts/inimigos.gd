@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var ray_cast_wall: RayCast2D = $RayCastWall
 @onready var raycastchao : RayCast2D = $RayCast
-@onready var animation: AnimatedSprite2D = $AnimationEnemy
+@onready var animacao: AnimatedSprite2D = $AnimationEnemy
 @onready var castAttack: RayCast2D = $rayAttack
 @onready var attack: CollisionShape2D = $Hitbox/Attack 
 @onready var cooldown: Timer = $cooldown
@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 		if not is_attackin:
 			velocity.x = speed * direction
 			move_and_slide()
-			animation.play("zombie")
+			animacao.play("zombie")
 	
 	if ray_cast_wall.is_colliding():
 		inverter_direcao()
@@ -40,20 +40,42 @@ func inverter_direcao() -> void:
 	attack.position.x *= -1
 	
 	if direction == 1:
-		animation.flip_h = true
+		animacao.flip_h = true
 	else:
-		animation.flip_h = false
+		animacao.flip_h = false
 
 func ataque():
 	is_attackin = true
+	attack.disabled = false
 	velocity = Vector2.ZERO
-	animation.play("attack")
+	animacao.play("ataque")
 	cooldown.start()
 
-func _on_animation_enemy_animation_finished(animationName: StringName) -> void:
-	if animationName == "attack":
+func _on_animation_enemy_animation_finished() -> void:
+	if animacao.animation == "ataque":
+		print("sou pateta")
+		attack.disabled = true
 		is_attackin = false
+		
+#func _on_animation_enemy_sprite_frames_changed() -> void:
+	#if animacao.animation == "ataque":
+		#if animacao.frame >= 1:
+			#print("sou pateta")
+			#attack.set_deferred("disabled", false)
+		#else:
+			#attack.set_deferred("disabled", true)
+
 
 func _on_hitbox_body_entered(player: Node2D) -> void:
 	if player.has_method("dano"):
 		player.dano()
+		attack.set_deferred("disabled", true)
+
+
+#func _on_animation_enemy_sprite_frames_changed() -> void:
+	#if animacao.animation == "ataque":
+		#if animacao.frame >= 1:
+			#print("sou pateta")
+			#attack.set_deferred("disabled", false)
+		#else:
+			#attack.set_deferred("disabled", true)
